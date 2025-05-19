@@ -1,9 +1,20 @@
+// NWSApiService.ts
+// This service interacts with the National Weather Service (NWS) API
+// to fetch weather data such as alerts, points, and forecasts.
+// It uses the Fetch API to make HTTP requests and handles responses and errors.
+// The service is designed to be reusable and can be easily integrated into other parts of the application. 
+// It also includes type definitions for the expected responses from the NWS API.
+// Importing necessary types for the API responses
 import {
   AlertsResponse,
   PointsResponse,
   ForecastResponse,
 } from "../../domain/models/Weather.js";
 
+// NWSApiService class definition
+// This class encapsulates the logic for making requests to the NWS API
+// and provides methods for fetching alerts, points, and forecasts.
+// The class uses a base URL for the API and includes a user agent string for identification.
 export class NWSApiService {
   private readonly API_BASE = "https://api.weather.gov";
   private readonly USER_AGENT = "weather-app/1.0";
